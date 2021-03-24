@@ -44,6 +44,7 @@ export default class ExportFilePlugin extends BasePlugin {
 
     a.style.display = 'none';
     a.setAttribute('href', url);
+    a.classList.add('external');
     a.setAttribute('download', name);
     this.revogrid.appendChild(a);
     a.dispatchEvent(new MouseEvent('click'));
