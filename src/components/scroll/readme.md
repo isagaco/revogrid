@@ -23,7 +23,7 @@
 
 ### `changeScroll(e: RevoGrid.ViewPortScrollEvent) => Promise<RevoGrid.ViewPortScrollEvent>`
 
-
+update on delta in case we don't know existing position or external change
 
 #### Returns
 
@@ -46,12 +46,12 @@ Type: `Promise<void>`
 
 ### Used by
 
- - [revogr-viewport](../viewport)
+ - [revo-grid](../revo-grid)
 
 ### Graph
 ```mermaid
 graph TD;
-  revogr-viewport --> revogr-viewport-scroll
+  revo-grid --> revogr-viewport-scroll
   style revogr-viewport-scroll fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,7 +1,8 @@
 /* eslint-disable */
 /* tslint:disable */
-
+// @ts-ignore
 import { VNode } from '@stencil/core';
+// @ts-ignore
 import { ObservableMap, Subscription } from '@stencil/store';
 
 export type Observable<T> = ObservableMap<T>;
@@ -118,10 +119,11 @@ export declare namespace RevoGrid {
   type ColumnProp = string | number;
   type DataFormat = any;
 
+  type CellProp = string | number | object | boolean | undefined;
   type CellProps = {
     style?: { [key: string]: string | undefined };
     class?: { [key: string]: boolean } | string;
-    [attr: string]: string | number | object | boolean;
+    [attr: string]: CellProp;
   };
 
   // --------------------------------------------------------------------------
@@ -343,6 +345,11 @@ export declare namespace Edition {
     val: any;
     preventFocus?: boolean;
   };
+
+  type BeforeEdit = {
+    isCancel: boolean;
+  } & Edition.BeforeSaveDataDetails;
+
   type BeforeSaveDataDetails = {
     prop: RevoGrid.ColumnProp;
     model: RevoGrid.DataType;
